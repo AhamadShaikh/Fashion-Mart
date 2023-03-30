@@ -1,0 +1,43 @@
+.prev-btn {
+    padding: 10px 10px;
+    border: 1px solid black;
+    /* background-color: gray; */
+    height: 100px;
+    align-content: center;
+    position: absolute;
+}
+
+.next-btn {
+    padding: 10px 10px;
+    border: 1px solid black;
+    /* background-color: gray; */
+    height: 100px;
+    position: absolute;
+    right: 0;
+}
+
+.image-card {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 0px 10px;
+}
+
+.image{
+    width: 100%;
+}
+.image>img{
+    width: 100%;
+}
+.Images>div{
+    margin: 20px 20px;
+}
+.Images{
+    position: relative;
+    overflow: hidden;
+}
+.prev-btn p,.next-btn p{
+    cursor: pointer;
+}
