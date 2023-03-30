@@ -1,9 +1,16 @@
 
 import { dashboardProduct, StaticImage1, StaticImage2 } from "../AllApi/Api";
-import { Flex, Box, Heading, Text, Button, Center, Image ,Grid} from "@chakra-ui/react"
+import { Flex, Box, Heading, Text, Button, Center, Image, Grid } from "@chakra-ui/react"
 import './LandingPage.css';
 import DashboardProducts from "../Components/DashboardProducts"
 import { useState, useEffect } from "react"
+import { Icon } from '@chakra-ui/react'
+import { FaFacebookF } from 'react-icons/fa'
+import { BsInstagram } from 'react-icons/bs'
+import { ImStarFull } from 'react-icons/im'
+import { MdStarHalf } from 'react-icons/md'
+
+import React from "react";
 function LandingPage() {
     const [images1, setImages1] = useState([])
     const [images2, setImages2] = useState([])
@@ -95,20 +102,113 @@ function LandingPage() {
             <Grid templateColumns='repeat(4, 1fr)' gap={5} bg="blackAlpha.100">
                 {
                     dashboardData?.map((ele) => (
-                        <DashboardProducts key={ele.id} {...ele}/>
+                        <DashboardProducts key={ele.id} {...ele} />
                     ))
                 }
             </Grid>
-            <Flex>
-                <Center>
-                    <Box>
-                        <Image src="https://uk.trustpilot.com/review/www.lyst.com?utm_medium=trustbox&utm_source=Mini" alt="" />
-                        <Text>
-                            Trustpilot
-                        </Text>
-                        <Image src="https://uk.trustpilot.com/review/www.lyst.com?utm_medium=trustbox&utm_source=Mini" alt="" />
-                    </Box>
-                </Center>
+            <Flex justifyContent="space-evenly" border="1px solid black" bg="blackAlpha.50" p="5">
+                <Box>
+                    <Image src="https://uk.trustpilot.com/review/www.lyst.com?utm_medium=trustbox&utm_source=Mini" alt="" />
+                    <Heading>
+                        Trustpilot
+                        <img src="https://uk.trustpilot.com/review/www.lyst.com?utm_medium=trustbox&utm_source=Mini" alt="" />
+                    </Heading>
+                    <Text>
+                        <br />
+                        <br />
+                        <Icon color="green" fontSize="30px" as={ImStarFull} />
+                        TrustScore 4.3
+                        <br />
+                        <br />
+                        <Icon color="green" fontSize="30px" as={ImStarFull} />
+                        <Icon color="green" fontSize="30px" as={ImStarFull} />
+                        <Icon color="green" fontSize="30px" as={ImStarFull} />
+                        <Icon color="green" fontSize="30px" as={ImStarFull} />
+                        <Icon color="green" fontSize="30px" as={MdStarHalf} />
+                        <br />
+                        <br />
+                        3,066 reviews
+                        <br />
+                        <br />
+                        <a target="_blank" href="https://www.facebook.com/Lyst/">
+                            <Icon fontSize="20px" as={FaFacebookF} /></a>
+                        <a target="_blank" href="https://www.instagram.com/lyst/?hl=en">
+                            <Icon fontSize="20px" as={BsInstagram} /></a>
+                    </Text>
+                    <br />
+                    <Text>Learn about the Lyst app for iPhone, iPad and Android. <br />© 2023 Lyst </Text>
+                    <Image src="https://uk.trustpilot.com/review/www.lyst.com?utm_medium=trustbox&utm_source=Mini" alt="" />
+                </Box>
+                <Box>
+                    <Text textAlign="left">
+                        INTERNATIONAL
+                        <br />
+                        Lyst - AU
+                        <br />
+                        Lyst - CA
+                        <br />
+                        Lyst - UK
+                        <br />
+                        Lyst - Österreich
+                        <br />
+                        Lyst - Schweiz
+                        <br />
+                        Lyst - Deutschland
+                        <br />
+                        Lyst - España
+                        <br />
+                        Lyst - France
+                        <br />
+                        Lyst - Italia
+                        <br />
+                        Lyst - 日本
+                        <br />
+                        Lyst - België
+                        <br />
+                        Lyst - Nederland
+                    </Text>
+                </Box>
+                <Box>
+                    <Text textAlign="left">
+                        HELP AND INFO
+                        <br />
+                        Help center
+                        <br />
+                        About us
+                        <br />
+                        Shipping policy
+                        <br />
+                        Returns policy
+                        <br />
+                        Payments
+                        <br />
+                        Refund policy
+                        <br />
+                        Developers
+                        <br />
+                        Careers
+                        <br />
+                        Contact
+                        <br />
+                        Terms & conditions
+                        <br />
+                        Privacy & cookie policy
+                        <br />
+                        Intellectual property
+                        <br />
+                        Categories
+                        <br />
+                        Become a partner
+                        <br />
+                        Lyst Insights
+                        <br />
+                        Lyst News
+                        <br />
+                        s172 statement
+                        <br />
+                        Modern slavery statement
+                    </Text>
+                </Box>
             </Flex>
         </div>
     )
