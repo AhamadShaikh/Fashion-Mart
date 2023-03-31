@@ -9,6 +9,7 @@ function MenProductPage() {
     const fetchAndUpdateData = () => {
         MenProducts().then((res) => setMenData(res?.data)).catch((err) => console.log(err))
     }
+    console.log(menData)
 
     useEffect(() => {
         fetchAndUpdateData();

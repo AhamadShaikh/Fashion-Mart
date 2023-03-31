@@ -10,9 +10,19 @@ const SingleProductPage = () => {
     const getData = async (id) => {
         try {
             setLoading(true);
-            let res = await fetch(`https://drab-ruby-shrimp-tux.cyclic.app/dashboard-products/${id}`);
-            let data = await res.json();
-            setData(data);
+            if (+id <= 8) {
+                let res = await fetch(`https://expensive-turtleneck-dove.cyclic.app/menswear/${id}`);
+                let data = await res.json();
+                setData(data);
+            } else if (+id >= 9 && +id <= 16) {
+                let res = await fetch(`https://expensive-turtleneck-dove.cyclic.app/womenswear/${id}`);
+                let data = await res.json();
+                setData(data);
+            } else {
+                let res = await fetch(`https://expensive-turtleneck-dove.cyclic.app/dashboard-product/${id}`);
+                let data = await res.json();
+                setData(data);
+            }
             setLoading(false);
         } catch (error) {
             console.log(error);
