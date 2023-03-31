@@ -2,38 +2,56 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Box, Flex, Button, Text, Heading, Center } from "@chakra-ui/react"
 import { CloseButton } from '@chakra-ui/react'
-import "./SingleProductPage.css"
+import "./SingleProductPage.css";
+import {GetHandleAddToCart,PostHandleAddToCart,GetAddToCartData} from "../AllApi/Api"
 const SingleProductPage = () => {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
+    const [cartData,setCartData] = useState([]);
+    const [cart,setCart] = useState([])
     const { id } = useParams();
     const getData = async (id) => {
         try {
             setLoading(true);
             if (+id <= 8) {
-                let res = await fetch(`https://expensive-turtleneck-dove.cyclic.app/menswear/${id}`);
+                let res = await fetch(`https://fashion-mart.onrender.com/menswear/${id}`);
                 let data = await res.json();
                 setData(data);
             } else if (+id >= 9 && +id <= 16) {
-                let res = await fetch(`https://expensive-turtleneck-dove.cyclic.app/womenswear/${id}`);
+                let res = await fetch(`https://fashion-mart.onrender.com/womenswear/${id}`);
                 let data = await res.json();
                 setData(data);
             } else {
-                let res = await fetch(`https://expensive-turtleneck-dove.cyclic.app/dashboard-product/${id}`);
+                let res = await fetch(`https://fashion-mart.onrender.com/dashboard-products/${id}`);
                 let data = await res.json();
                 setData(data);
             }
+            GetAddToCartData().then((res)=>setCart(res?.data))
             setLoading(false);
         } catch (error) {
             console.log(error);
         }
     };
+    for(let i=0;i<cart.length;i++){
+        if(cart[i].cartData !== ""){
+            console.log(cart[i].cartData)
+        }
+    }
     useEffect(() => {
         getData(id);
     }, [id]);
     if (loading) {
         return <h1>Loading...</h1>;
     }
+
+    const handleAddToCart=()=>{
+        GetHandleAddToCart(id).then((res)=>PostHandleAddToCart(res?.data)).catch((err)=>console.log(err))
+        if(cartData.length !== 0){
+            PostHandleAddToCart(cartData)
+        }
+    }
+    // console.log(cartData)
+
     return (
         <Flex w="60%" m="auto" border="2px solid black" mt="5" borderRadius="20px">
             <Box w="100%" h="500px" mr="5">
@@ -51,7 +69,7 @@ const SingleProductPage = () => {
                 <Text as="b" m="5">${data.totalPrice}</Text>
                 <Text m="5">{data.description}</Text>
                 <Center>
-                    <Button color="white" bg="black" _hover="" w="300px">Shop Now</Button>
+                    <Button color="white" bg="black" _hover="" w="300px" onClick={()=>handleAddToCart(id)}>Shop Now</Button>
                 </Center>
                 <Center>
                     <Button variant="outline" bg="blackAlpha.200" w="300px" mt="5">Track Deal</Button>

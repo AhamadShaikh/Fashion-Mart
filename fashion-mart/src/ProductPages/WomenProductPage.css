@@ -1,0 +1,12 @@
+.pageBtn{
+    width: 200px;
+    margin: auto;
+    margin-top: 20px;
+}
+.pageBtn > button{
+    
+    border: 1px solid black;
+    background-color: aliceblue;
+    margin-right: 5px;
+    width: 50px;
+}

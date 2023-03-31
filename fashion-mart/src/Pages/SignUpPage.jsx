@@ -1,5 +1,6 @@
-import { Heading, FormControl, Box, Center, Button, FormLabel, Flex, Input, Text, ButtonGroup, Spacer } from "@chakra-ui/react";
-import { Link } from "react-router-dom"
+import { Heading, FormControl, Box, Center, Button, FormLabel, Flex, Input, Text, ButtonGroup, Spacer,Image } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import logo from "./logo.png"
 function SignUpPage() {
   let style = {
     border: "1px solid black",
@@ -9,11 +10,11 @@ function SignUpPage() {
   return (
     <div>
       <div>
-        <Flex minWidth="max-content" alignItems="center" gap="2" p="5">
+        <Flex minWidth="max-content" alignItems="center" gap="2" border="1px solid black">
           <Box>
-            <Text size="md" fontSize="30" as="b" mr="5">
+            <Text size="md" fontSize="30" as="b">
               <Link to="/">
-                FASHION MART
+              <Image src={logo} alt="" h="120px" w="150px"/>
               </Link>
             </Text>
           </Box>
