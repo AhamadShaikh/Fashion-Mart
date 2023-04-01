@@ -1,17 +1,20 @@
 
 import { createContext, useState } from "react"
-import { getSingleProduct } from "../AllApi/Api"
-import { Link, navigate } from "react-router-dom"
 
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
-  const [productData, setProductData] = useState([])
-  const handleSingleProductPage = (id) => {
-    // getSingleProduct(id).then((res) => setProductData(res.data))
+  const [isAuth, setIsAuth] = useState(false);
+
+  const login = () => {
+    setIsAuth(true)
   }
+  const logout = () => {
+    setIsAuth(false)
+  }
+  console.log(isAuth)
   return (
-    <AuthContext.Provider value={{ handleSingleProductPage: handleSingleProductPage, data: productData }}>
+    <AuthContext.Provider value={{ login: login, logout: logout, isAuth: isAuth }}>
       {props.children}
     </AuthContext.Provider>
   )
