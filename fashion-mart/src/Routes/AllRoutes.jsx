@@ -5,6 +5,7 @@ import MenProductPage from "../ProductPages/MenProductPage";
 import LoginPage from "../Pages/LoginPage";
 import SignUpPage from "../Pages/SignUpPage";
 import SingleProductPage from "../Pages/SingleProductPage";
+import PrivateRoute from "./PrivateRoute";
 function AllRoutes() {
     return (
         <div>
@@ -14,8 +15,8 @@ function AllRoutes() {
                 <Route path="/MenProductPage" element={<MenProductPage />} />
                 <Route path="/SignUpPage" element={<SignUpPage />} />
                 <Route path="/LoginPage" element={<LoginPage />} />
-                <Route path="/SingleProductPage/:id" element={<SingleProductPage />} />
-            </Routes>
+                <Route path="/SingleProductPage/:id" element={<PrivateRoute><SingleProductPage /></PrivateRoute>} />
+            </Routes> 
         </div>
     )
 

@@ -28,10 +28,18 @@ export const GetHandleAddToCart = (id)=>{
     return axios.get(`https://fashion-mart.onrender.com/womenswear/${id}`)
 }
 
-export const PostHandleAddToCart = (...cartData)=>{
-    return axios.post(`https://fashion-mart.onrender.com/womenswear/cartData`,{...cartData})
+export const PostHandleAddToCart = (cartData)=>{
+    return axios.post(`https://fashion-mart.onrender.com/womenswear/cartData`,cartData)
 }
 
 export const GetAddToCartData = ()=>{
     return axios.get(`https://fashion-mart.onrender.com/cartData`)
+}
+
+export const PostSignUpData = (state)=>{
+    return axios.post(`https://fashion-mart.onrender.com/users`,state)
+}
+
+export const GetSignUpData = ()=>{
+    return axios.get(`https://fashion-mart.onrender.com/users`)
 }
