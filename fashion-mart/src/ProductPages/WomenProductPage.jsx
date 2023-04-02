@@ -1,6 +1,6 @@
 import { WomenProducts } from "../AllApi/Api"
 import { useState, useEffect, useReducer } from "react";
-import { Grid, Flex, Select, Stack, Text ,Box} from "@chakra-ui/react";
+import { Grid, Flex, Select, Stack, Text, Box } from "@chakra-ui/react";
 import DashboardProducts from "../Components/DashboardProducts"
 import Navbar from "../Pages/Navbar";
 import "./WomenProductPage.css"
@@ -67,7 +67,7 @@ function WomenProductPage() {
         dispatch({ type: "FETCH_LOADING" })
         WomenProducts({ order: order, pageState: pageState, query: query })
             .then((res) => {
-                dispatch({ type: "FETCH_SUCCESS", payload:res.data })
+                dispatch({ type: "FETCH_SUCCESS", payload: res.data })
             })
             .catch(() => {
                 dispatch({ type: "FETCH_ERROR" })
@@ -88,10 +88,11 @@ function WomenProductPage() {
     return (
         <div>
             <div>
-                <Navbar handleSearch={handleSearch}/>
-                <Flex>
-                <Stack mr="5">
-                        <Box border="2px solid black" borderRadius="5px">
+                <Navbar handleSearch={handleSearch} />
+                <Flex m="3">
+                    <Stack mr="5">
+                        <Box border="2px solid black" borderRadius="5px" p="3" boxShadow="2xl">
+                            <Text as="b">Sort By Price</Text>
                             <Box border="1px solid black" m={"5"} borderRadius="5px">
                                 <Select w="200px" onChange={handleSort}>
                                     <option value="asc">price low to high</option>
@@ -99,7 +100,7 @@ function WomenProductPage() {
                                 </Select>
                             </Box>
                             <Box border="1px solid black">
-                                <Text as="b">filter by brands</Text>
+                                <Text as="b" mb="5">filter by brands</Text>
                                 <hr />
                                 <Text>Dolce & Gabbana : </Text><input value="Dolce & Gabbana" type="checkbox" onChange={(e) => setQuery(e.target.value)} />
                                 <Text>Cettire : </Text><input value="Cettire" type="checkbox" onChange={(e) => setQuery(e.target.value)} />

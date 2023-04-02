@@ -37,7 +37,7 @@ function LoginPage() {
   const [signUpData,setSignUpData] = useState([])
 
   let style = {
-    border: "1px solid black",
+    border: "2px solid black",
     borderRadius: "10px",
     alignItem: "center",
   }
@@ -70,11 +70,11 @@ function LoginPage() {
   return (
     <div>
       <div>
-      <Flex minWidth="max-content" alignItems="center" gap="2" border="1px solid black">
+      <Flex minWidth="max-content" alignItems="center" gap="2" border="1px solid black" boxShadow="2xl">
           <Box>
             <Text size="md" fontSize="30" as="b">
               <Link to="/">
-              <Image src={logo} alt="" h="120px" w="150px"/>
+              <Image src={logo} alt="" h="150px" w="180px"/>
               </Link>
             </Text>
           </Box>
@@ -96,7 +96,7 @@ function LoginPage() {
         <hr />
       </div>
       <Heading as="h1" mt="50">Login</Heading>
-      <Box w="450px" m="auto" border={style.border} borderRadius={style.borderRadius} p="5" mt="30">
+      <Box boxShadow="2xl" w="450px" m="auto" border={style.border} borderRadius={style.borderRadius} p="5" mt="30">
         <form data-testid="form-element" onSubmit={handleLoginSubmit}>
           <FormControl>
             <FormLabel>Email Address</FormLabel>
