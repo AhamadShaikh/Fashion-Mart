@@ -23,13 +23,21 @@ export const GetSearchData = (query) => {
     return axios.get(`https://fashion-mart.onrender.com/dashboard-products?q=${query}`)
 }
 
-export const GetHandleAddToCart = (id)=>{
+export const GetHandleAddToCartMen = (id)=>{
+    console.log(id)
+    return axios.get(`https://fashion-mart.onrender.com/menswear/${id}`)
+}
+export const GetHandleAddToCartWomen = (id)=>{
     console.log(id)
     return axios.get(`https://fashion-mart.onrender.com/womenswear/${id}`)
 }
+export const GetHandleAddToCartDashPro = (id)=>{
+    console.log(id)
+    return axios.get(`https://fashion-mart.onrender.com/dashboard-products/${id}`)
+}
 
 export const PostHandleAddToCart = (cartData)=>{
-    return axios.post(`https://fashion-mart.onrender.com/womenswear/cartData`,cartData)
+    return axios.post(`https://fashion-mart.onrender.com/cartData`,cartData)
 }
 
 export const GetAddToCartData = ()=>{
@@ -42,4 +50,13 @@ export const PostSignUpData = (state)=>{
 
 export const GetSignUpData = ()=>{
     return axios.get(`https://fashion-mart.onrender.com/users`)
+}
+
+export const GetProductsTotal = (id)=>{
+    console.log(id)
+    return axios.get(`https://fashion-mart.onrender.com/dashboard-products/${id}`)
+}
+
+export const PostAddressDetails = (state)=>{
+    return axios.post(`https://fashion-mart.onrender.com/customer-details`,state)
 }

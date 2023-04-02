@@ -68,7 +68,6 @@ function MenProductPage() {
         dispatch({ type: "FETCH_LOADING" })
         MenProducts({ order: order, pageState: pageState, query: query })
             .then((res) => {
-                console.log(res.data)
                 dispatch({ type: "FETCH_SUCCESS", payload: res.data })
             })
             .catch(() => {
@@ -91,9 +90,10 @@ function MenProductPage() {
         <div>
             <div>
                 <Navbar handleSearch={handleSearch} />
-                <Flex>
+                <Flex m="3">
                     <Stack mr="5">
-                        <Box border="2px solid black" borderRadius="5px">
+                        <Box border="2px solid black" borderRadius="5px" p="3" boxShadow="2xl">
+                            <Text as="b">Sort By Price</Text>
                             <Box border="1px solid black" m={"5"} borderRadius="5px">
                                 <Select w="200px" onChange={handleSort}>
                                     <option value="asc">price low to high</option>

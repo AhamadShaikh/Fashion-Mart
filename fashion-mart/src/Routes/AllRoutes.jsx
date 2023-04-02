@@ -6,6 +6,10 @@ import LoginPage from "../Pages/LoginPage";
 import SignUpPage from "../Pages/SignUpPage";
 import SingleProductPage from "../Pages/SingleProductPage";
 import PrivateRoute from "./PrivateRoute";
+import CartPage from "../Pages/CartPage";
+import AddressPage from "../Pages/AddressPage";
+import PaymentPage from "../Pages/PaymentPage";
+import RecieptPage from "../Pages/RecieptPage"
 function AllRoutes() {
     return (
         <div>
@@ -16,7 +20,11 @@ function AllRoutes() {
                 <Route path="/SignUpPage" element={<SignUpPage />} />
                 <Route path="/LoginPage" element={<LoginPage />} />
                 <Route path="/SingleProductPage/:id" element={<PrivateRoute><SingleProductPage /></PrivateRoute>} />
-            </Routes> 
+                <Route path="/CartPage" element={<CartPage />} />
+                <Route path="/AddressPage" element={<AddressPage />} />
+                <Route path="/PaymentPage" element={<PaymentPage />} />
+                <Route path="/RecieptPage" element={<RecieptPage />} />
+            </Routes>
         </div>
     )
 

@@ -10,7 +10,7 @@ const DashboardProducts = ({ id, image, name, detail, brandName, totalPrice }) =
 
     return (
         <Box>
-            <GridItem w='100%' border="1px solid black" p="3" bg="white">
+            <GridItem w='100%' border="1px solid black" p="3" bg="white" boxShadow="2xl" borderRadius="10px">
                 <img src={image} width="100%" />
                 <Text as="b" fontSize="20px">{name}</Text>
                 <Text fontSize="20px">From {brandName}</Text>
