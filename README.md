@@ -1,6 +1,7 @@
-# maxed-tiger-1503
+# Lyst
 At Lyst, we are passionate about fashion and committed to providing you with the best online shopping experience. Step into our virtual wardrobe and immerse yourself in the world of fashion, where style knows no bounds.With a vast and diverse selection of top fashion brands, designers, and boutiques, Lyst brings the latest trends and timeless classics right to your fingertips. Whether you're seeking high-end luxury pieces or budget-friendly finds, we've got something for every fashionista.
 
+# Screenshots
 Navbar
 1.two seperate section women and men
 2.search fuctionality
